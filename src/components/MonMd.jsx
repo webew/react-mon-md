@@ -9,17 +9,20 @@ class MonMd extends Component {
 
 	handleChange = (e) => {
 		this.setState({ text: e.target.value });
+		console.log("====================================");
+		console.log(this.state);
+		console.log("====================================");
 	};
 
 	render() {
 		return (
 			<>
 				<h1>MonMd</h1>
-				<section
-					style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}
-				>
+				<section className="mon-md">
 					<textarea onChange={this.handleChange} rows="30"></textarea>
-					<ReactMarkdown>{this.state.text}</ReactMarkdown>
+					<ReactMarkdown className="reactmarkdown">
+						{this.state.text}
+					</ReactMarkdown>
 				</section>
 			</>
 		);
